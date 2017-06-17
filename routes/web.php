@@ -17,4 +17,8 @@ Route::get('/', function () {
 
 Route::get('/admin', function () {
     return view('admin.manage');
+})->middleware('validUser');
+
+Route::get('/login', function(){
+    return view('admin.login');
 });
