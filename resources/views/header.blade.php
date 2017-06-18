@@ -1,11 +1,4 @@
-@section('style')
-    <style>
-        button.btn {
-            height: 35px;
-            width: 80px;
-        }
-    </style>
-    @stop
+
 <div class="header-connect">
     <div class="container">
         <div class="row">
@@ -42,13 +35,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+            <a class="navbar-brand" href="#"><img src="{{asset('img/logo1.PNG')}}" alt="" style="width: 150px;height: 48px"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <div class="button navbar-right">
-                <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.8s">Login / Sign Up</button>
+                <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.8s"
+                        data-toggle="modal" data-target="#loginModal"
+                >Login / Sign Up</button>
                 <button class="navbar-btn nav-button wow fadeInRight" data-wow-delay="0.6s">Post Jobs</button>
             </div>
             <div class="search-form wow pulse main-nav nav navbar-nav " data-wow-delay="0.8s">
@@ -68,7 +63,7 @@
                     <div class="form-group">
                        <input type="text" class="form-control" style="margin-right: 0px;">
                     </div>
-                    <button type="submit" class="btn" ><img class="search_logo" src="img/magnifying-glass.svg" ></button>
+                    <button type="submit" class="btn searchBtn" ><img class="search_logo" src="img/magnifying-glass.svg" ></button>
 
 
                 </form>
