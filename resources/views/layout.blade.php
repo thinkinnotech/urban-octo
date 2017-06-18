@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Created by PhpStorm.
@@ -40,6 +41,34 @@
     <link rel="stylesheet" href="{{ URL::asset('css/owl.transitions.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/responsive.css') }}">
+    <style>
+
+        button.btn.searchBtn {
+            background: #00AEEF;
+            color: #fff;
+            height: 40px;
+            width: 48px;
+            border-radius: 1px;
+            font-weight: bold;
+            font-size: 16px;
+            -webkit-transition: all 0.4s ease;
+            -moz-transition: all 0.4s ease;
+            -ms-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+        }
+        .form-inline .form-control, .form-inline .form-control
+        {
+            background-color: white!important;
+        }
+        .search_logo
+        {
+            height: 24px;
+        }
+        .search-form
+        {
+            padding: 15px 0;
+        }
+    </style>
     <script src="{{ URL::asset('js/vendor/modernizr-2.6.2.min.js') }}"></script>
 </head>
 <body>
@@ -51,6 +80,10 @@
 @include('header')
 @yield('content')
 @include('footer')
+<!-- Modal -->
+
+@include('sigin_signup_box')
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') }}"></script>
 <script>window.jQuery || document.write('<script src="{{ URL::asset('js/vendor/jquery-1.10.2.min.js') }}"><\/script>')</script>
 <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
