@@ -22,3 +22,5 @@ Route::get('/admin', function () {
 Route::get('/login', function(){
     return view('admin.login');
 });
+
+Route::post('/login', 'LoginController@login');

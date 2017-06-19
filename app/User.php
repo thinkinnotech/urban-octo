@@ -14,16 +14,26 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+    protected $table = "users";
+
+//    protected $fillable = [
+//        'name', 'email', 'password',
+//    ];
 
     /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
      */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+//    protected $hidden = [
+//        'password', 'remember_token',
+//    ];
+
+    public static function getUserDetails($user, $pass)
+    {
+        return User::select('fname', 'lname', 'username', 'user_type', 'email', 'phone')
+            ->where('username', $user)
+            ->where('password', $pass)
+            ->get();
+    }
 }
