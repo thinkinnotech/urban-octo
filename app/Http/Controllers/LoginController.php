@@ -18,7 +18,7 @@ class LoginController extends Controller
         if ($request->isMethod('post')) {
             $username = $request->username;
             $password = $request->password;
-            $result = User::getUserDetails($username, $password);
+            $result = json_decode(User::getUserDetails($username, $password), true);
             if(!empty($result)){
                 $request->session()->put('userDetails', $result);
                 return json_encode(array("result"=>"Success"));
@@ -26,5 +26,11 @@ class LoginController extends Controller
                 return json_encode(array("result"=>"Failed"));
             }
         }
+    }
+
+    public function logout(Request $request)
+    {
+        $request->session()->flush();
+        return redirect('/');
     }
 }

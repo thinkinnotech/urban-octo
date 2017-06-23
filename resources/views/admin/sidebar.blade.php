@@ -41,38 +41,38 @@
             <!-- Optionally, you can add icons to the links -->
 
             <li class="treeview">
-                <a href="#"><i class="fa fa-link"></i> <span>Quotation</span>
+                <a href="#"><i class="fa fa-link"></i> <span>City</span>
                     <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="/admin/quotation"><i class="fa fa-circle"></i> All Quotation </a></li>
-
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#"><i class="fa fa-link"></i> <span>Vendor</span>
-                    <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="/admin/manage"><i class="fa fa-circle"></i> Manage Vendor</a></li>
-                    <li><a href="/admin/excel_upload"><i class="fa fa-circle"></i> Vendor Excel Upload</a></li>
-
+                    <li><a href="/admin/city-add"><i class="fa fa-circle"></i> Add City </a></li>
+                    <li><a href="/admin/city"><i class="fa fa-circle"></i> Manage City </a></li>
                 </ul>
             </li>
 
             <li class="treeview">
-                <a href="#"><i class="fa fa-link"></i> <span>Banner</span>
+                <a href="#"><i class="fa fa-link"></i> <span>Location</span>
                     <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="/admin/add_banner"><i class="fa fa-circle"></i> Add Banner</a></li>
+                    <li><a href="/admin/location-add"><i class="fa fa-circle"></i> Add Location </a></li>
+                    <li><a href="/admin/location"><i class="fa fa-circle"></i> Manage Location </a></li>
+                </ul>
+            </li>
 
+            <li class="treeview">
+                <a href="#"><i class="fa fa-link"></i> <span>Education/Course</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="/admin/education-add"><i class="fa fa-circle"></i> Add Education/Course </a></li>
+                    <li><a href="/admin/education"><i class="fa fa-circle"></i> Manage Education/Course </a></li>
                 </ul>
             </li>
 

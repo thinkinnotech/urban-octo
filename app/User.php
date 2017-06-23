@@ -31,9 +31,9 @@ class User extends Authenticatable
 
     public static function getUserDetails($user, $pass)
     {
-        return User::select('fname', 'lname', 'username', 'user_type', 'email', 'phone')
+        return User::select('id', 'fname', 'lname', 'username', 'user_type', 'email', 'phone', 'created_at')
             ->where('username', $user)
             ->where('password', $pass)
-            ->get();
+            ->first();
     }
 }
