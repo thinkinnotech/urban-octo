@@ -113,13 +113,30 @@ background-color: #00aeef;
 
 .slider-area{
 	position: relative;
-	height: 630px
+	height: 400px;
+	background-color: #03A9F4;
 }
 #bg-slider .item img{
 	width: 100%;
-	height: 630px
+	height: 400px;
 }
-
+.slider-area:before {
+	content: "";
+	position: absolute;
+	width: 200%;
+	height: 200%;
+	top: -50%;
+	left: -50%;
+	z-index: -1;
+	background: url(some-background-url-here) 40% 50% no-repeat;
+}
+.slider-area:before {
+	-webkit-transform: rotate(-30deg);
+	-moz-transform: rotate(-30deg);
+	-ms-transform: rotate(-30deg);
+	-o-transform: rotate(-30deg);
+	transform: rotate(-30deg);
+}
 .slider-content{
 	position: absolute;
 	top:20%;
@@ -417,14 +434,14 @@ background-color: #00aeef;
 .table tr:hover td a{
 	background: #0486B7
 }
-.table tr:hover td a:hover{
+/*.table tr:hover td a:hover{
 	background: #fff;
 	color: #00AEEF
-}
+}*/
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td{
 	border-top: 0px;
 	vertical-align: middle;
-	padding: 15px
+	padding: 5px
 }
 .table > tbody > tr > td.tbl-logo{
 	padding-right: 0px
@@ -436,15 +453,15 @@ background-color: #00aeef;
 .table > tbody > tr > td.tbl-title{
 	padding-left: 5px
 }
-.table tr.odd{
+/*.table tr.odd{
 	background: #F9F9F9
 }
 .table tr.even{
 	background: #F4FFFF
-}
+}*/
 .table tr:hover{
-	background: #00AEEF;
-	color: #fff
+	/*background: #00AEEF;
+	color: #fff*/
 }
 
 .more-jobs{

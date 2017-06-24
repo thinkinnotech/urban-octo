@@ -1,1 +1,6 @@
 
+.env
+.idea/.citijobs.iml.swp
+.idea/.citijobs_LOCAL_4844.iml.swp
+.idea/.citijobs_REMOTE_4844.iml.swp
+*.iml

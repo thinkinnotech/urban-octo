@@ -1,12 +1,12 @@
 
-<div class="header-connect">
+{{--<div class="header-connect">
     <div class="container">
         <div class="row">
             <div class="col-md-5 col-sm-8 col-xs-8">
                 <div class="header-half header-call">
                     <p>
                         <span><i class="icon-cloud"></i>+019 4854 8817</span>
-                        <span><i class="icon-mail"></i>ohidul.islam951@gmail.com</span>
+                        <span><i class="icon-mail"></i>thinkinnotech1@gmail.com</span>
                     </p>
                 </div>
             </div>
@@ -24,7 +24,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>--}}
 <nav class="navbar navbar-default">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -35,7 +35,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><img src="{{asset('img/logo1.PNG')}}" alt="" style="width: 150px;height: 48px"></a>
+            <a class="navbar-brand" href="#"><img src="{{asset('img/cropped-logo2-1.png')}}" alt="" style="width: 150px;height: 48px"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -44,15 +44,20 @@
                 <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.8s"
                         data-toggle="modal" data-target="#loginModal"
                 >Login / Sign Up</button>
-                <button class="navbar-btn nav-button wow fadeInRight" data-wow-delay="0.6s">Post Jobs</button>
+                <a class="navbar-btn nav-button wow fadeInRight" href="/jobpost" data-wow-delay="0.6s">Post Jobs</a>
             </div>
             <div class="search-form wow pulse main-nav nav navbar-nav " data-wow-delay="0.8s">
-                <form action="" class=" form-inline">
+                <form action="/job" method="get"  id="search_form">
+
+                </form>
+                <div class=" form-inline">
+
+
                     <div class="form-group">
                         <a href=""><i class="fa fa-map-marker fa-2x"></i> &nbsp;Mumbai&nbsp;</a>
                     </div>
                     <div class="form-group">
-                        <select name="" id="" class="form-control" style="width: 150px;margin-right: 0px;">
+                        <select name="city" id="" class="form-control" style="width: 150px;margin-right: 0px;">
                             <option>Select Your City</option>
                             <option selected>New york, CA</option>
                             <option>New york, CA</option>
@@ -61,12 +66,12 @@
                         </select>
                     </div>
                     <div class="form-group">
-                       <input type="text" class="form-control" style="margin-right: 0px;">
+                       <input type="text" name="query" id="query" class="form-control" style="margin-right: 0px;">
                     </div>
-                    <button type="submit" class="btn searchBtn" ><img class="search_logo" src="img/magnifying-glass.svg" ></button>
+                    <button type="submit" class="btn searchBtn" onclick="submitSearch(this)" ><img class="search_logo" src="{{asset('img/magnifying-glass.svg')}}" ></button>
 
+                </div>
 
-                </form>
             </div>
 
             {{--  <ul class="main-nav nav navbar-nav navbar-right">

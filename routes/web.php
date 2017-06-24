@@ -22,3 +22,18 @@ Route::get('/admin', function () {
 Route::get('/login', function(){
     return view('admin.login');
 });
+Route::get('/jobsearch', function(){
+    return view('jobsearch');
+});
+Route::get('/jobdetail', function(){
+    return view('jobdetail');
+});
+
+Route::get('/jobpost', function(){
+    return view('jobpost');
+});
+Route::get('/jobdetail/{job}', function(\App\Job $job){
+    return view('jobdetail', compact('job'));
+});
+
+Route::resource('/job','JobController');

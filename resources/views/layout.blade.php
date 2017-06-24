@@ -58,7 +58,10 @@
         .form-inline .form-control, .form-inline .form-control
         {
             background-color: white!important;
+            font-weight:bold;
+            font-style: normal;
         }
+
         .search_logo
         {
             height: 24px;
@@ -67,7 +70,14 @@
         {
             padding: 15px 0;
         }
+        .table tr.even {
+            background: #f1f1f1;
+        }
+        .panel-body { padding:0px; }
+        .panel-body table tr td { padding-left: 15px }
+        .panel-body .table {margin-bottom: 0px; }
     </style>
+    @yield('style')
     <script src="{{ URL::asset('js/vendor/modernizr-2.6.2.min.js') }}"></script>
 </head>
 <body>
@@ -83,11 +93,34 @@
 
 @include('sigin_signup_box')
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js') }}"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="{{ URL::asset('js/vendor/jquery-1.10.2.min.js') }}"><\/script>')</script>
 <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
 <script src="{{ URL::asset('js/owl.carousel.min.js') }}"></script>
 <script src="{{ URL::asset('js/wow.js') }}"></script>
 <script src="{{ URL::asset('js/main.js') }}"></script>
+<script>
+    function submitSearch(form) {
+
+        $keyword = slugify($('#query').val());
+     //   alert($keyword);
+
+        $('#search_form').attr('action','/job/'+$keyword);
+        $('#search_form').submit();
+        return false;
+
+    }
+    function slugify(string) {
+        return string
+            .toString()
+            .trim()
+            .toLowerCase()
+            .replace(/\s+/g, "-")
+            .replace(/[^\w\-]+/g, "")
+            .replace(/\-\-+/g, "-")
+            .replace(/^-+/, "")
+            .replace(/-+$/, "");
+    }
+</script>
 </body>
 </html>
