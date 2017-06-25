@@ -14,11 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::group(['middleware' => ['web','validUser']], function (){
+Route::group(['middleware' => ['web', 'validUser']], function () {
     Route::get('/admin', function () {
         return view('admin.manage');
     });
-    Route::get('/admin/city-add', function(){
+    Route::get('/admin/city-add', function () {
         return view('admin.city.add_city');
     });
     Route::post('/admin/add-city', 'CityController@addCity');
@@ -30,8 +30,8 @@ Route::group(['middleware' => ['web','validUser']], function (){
     Route::post('/admin/city-delete', 'CityController@deleteCity');
 
 
-    Route::get('/admin/location-add', function(){
-        return view('admin.location.add_location', ['cities'=>\App\City::allCity()]);
+    Route::get('/admin/location-add', function () {
+        return view('admin.location.add_location', ['cities' => \App\City::allCity()]);
     });
     Route::post('/admin/add-location', 'LocationController@addLocation');
 
@@ -41,7 +41,7 @@ Route::group(['middleware' => ['web','validUser']], function (){
 
     Route::post('/admin/location-delete', 'LocationController@deleteLocation');
 
-    Route::get('/admin/education-add', function(){
+    Route::get('/admin/education-add', function () {
         return view('admin.education.add_education');
     });
     Route::post('/admin/add-education', 'EducationController@addEducation');
@@ -55,12 +55,39 @@ Route::group(['middleware' => ['web','validUser']], function (){
 
 });
 
-Route::get('/login', function(){
+Route::get('/login', function () {
     return view('admin.login');
 });
 
 Route::post('/login', 'LoginController@login');
 
-
-
 Route::get('/logout', 'LoginController@logout');
+
+
+Route::get('/jobsearch', function () {
+
+    return view('jobsearch');
+
+});
+
+Route::get('/jobdetail', function () {
+
+    return view('jobdetail');
+
+});
+
+
+Route::get('/jobpost', function () {
+
+    return view('jobpost');
+
+});
+
+Route::get('/jobdetail/{job}', function (\App\Job $job) {
+
+    return view('jobdetail', compact('job'));
+
+});
+
+
+Route::resource('/job', 'JobController');
