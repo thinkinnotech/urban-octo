@@ -14,7 +14,7 @@ $userDetails = \Illuminate\Support\Facades\Session::has('userDetails') ? \Illumi
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>C</b>J</span>
         <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>CitiJobs</b></span>
+        <span class="logo-lg"><img src="{{asset('img/cropped-logo2-1.png')}}" alt="" style="width: 150px;height: 48px"></span>
     </a>
 
     <!-- Header Navbar -->

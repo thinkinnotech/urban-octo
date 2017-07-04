@@ -54,83 +54,9 @@
 @section('content')
   <div class="container" style="margin-top: 10px">
       <div class="col-md-3">
-          <div class="panel-group" id="accordion">
-              <div class="panel panel-default">
-                  <div class="panel-heading">
-                      <h4 class="panel-title">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><i class="fa fa-list">
-                            </i> &nbsp;Content</a>
-                      </h4>
-                  </div>
-                  <div id="collapseOne" class="panel-collapse collapse in">
-                      <div class="panel-body">
-                          <ul class="list-group">
-                              <li class="list-group-item">Cras justo odio</li>
-                              <li class="list-group-item">Dapibus ac facilisis in</li>
-                              <li class="list-group-item">Morbi leo risus</li>
-                              <li class="list-group-item">Porta ac consectetur ac</li>
-                              <li class="list-group-item">Vestibulum at eros</li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
-              <div class="panel panel-default">
-                  <div class="panel-heading">
-                      <h4 class="panel-title">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                              <i class="fa fa-list">
-                              </i> &nbsp;Modules</a>
-                      </h4>
-                  </div>
-                  <div id="collapseTwo" class="panel-collapse collapse">
-                      <div class="panel-body">
-                          <ul class="list-group">
-                              <li class="list-group-item">Cras justo odio</li>
-                              <li class="list-group-item">Dapibus ac facilisis in</li>
-                              <li class="list-group-item">Morbi leo risus</li>
-                              <li class="list-group-item">Porta ac consectetur ac</li>
-                              <li class="list-group-item">Vestibulum at eros</li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
-              <div class="panel panel-default">
-                  <div class="panel-heading">
-                      <h4 class="panel-title">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                              <i class="fa fa-list">
-                              </i> &nbsp;Account</a>
-                      </h4>
-                  </div>
-                  <div id="collapseThree" class="panel-collapse collapse">
-                      <div class="panel-body">
-                          <ul class="list-group">
-                              <li class="list-group-item">Cras justo odio</li>
-                              <li class="list-group-item">Dapibus ac facilisis in</li>
-                              <li class="list-group-item">Morbi leo risus</li>
-                              <li class="list-group-item">Porta ac consectetur ac</li>
-                              <li class="list-group-item">Vestibulum at eros</li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
-              <div class="panel panel-default">
-                  <div class="panel-heading">
-                      <h4 class="panel-title">
-                          <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
-                              <i class="fa fa-list">
-                              </i> &nbsp;Reports</a>
-                      </h4>
-                  </div>
-                  <div id="collapseFour" class="panel-collapse collapse">
-                      <div class="panel-body">
-
-                      </div>
-                  </div>
-              </div>
-          </div>
+          @include('filtration')
       </div>
-      <div class="col-md-8">
+      <div class="col-md-8" style="z-index: 0;">
 
           <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing">
               @if(count($jobs))
@@ -162,8 +88,16 @@
                                       <li>{{$job->salary_min}} - {{$job->salary_max}} &nbsp;lakh/anum</li>
                                   </ul>
 
-                                  <p class="hidden-xs">{{$job->description}}
+                                  <p class="hidden-xs">{{str_limit($job->description,300)}}
                                       ...</p><span class="fnt-smaller fnt-lighter fnt-arial">Company: {{$job->company_name}}</span>
+                                  <br>
+                                  <br>
+                                  <div class="buton-group">
+                                      <a href="" class="btn btn-primary nav-button login">Apply</a>
+                                      <a href="/jobdetail/{{$job->id}}" class="btn btn-primary nav-button ">View Details</a>
+
+                                  </div>
+                                  <hr>
                               </div>
                           </a>
                       </div>

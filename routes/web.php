@@ -52,6 +52,53 @@ Route::group(['middleware' => ['web', 'validUser']], function () {
 
     Route::post('/admin/education-delete', 'EducationController@deleteEducation');
 
+    Route::get('/admin/roles-add', function(){
+        return view('admin.roles.add_job_role');
+    });
+
+    Route::post('/admin/add-roles', 'RolesController@addRoles');
+
+    Route::get('/admin/roles', 'RolesController@roles');
+
+    Route::post('/admin/roles-update', 'RolesController@updateRoles');
+
+    Route::post('/admin/roles-delete', 'RolesController@deleteRoles');
+
+    Route::get('/admin/language-add', function(){
+        return view('admin.language.add_language');
+    });
+
+    Route::post('/admin/add-language', 'LanguageController@addLanguage');
+
+    Route::get('/admin/language', 'LanguageController@language');
+
+    Route::post('/admin/language-update', 'LanguageController@updateLanguage');
+
+    Route::post('/admin/language-delete', 'LanguageController@deleteLanguage');
+
+    Route::get('/admin/skill-add', function(){
+        return view('admin.skill.add_skill');
+    });
+
+    Route::post('/admin/add-skill', 'SkillController@addSkill');
+
+    Route::get('/admin/skill', 'SkillController@skill');
+
+    Route::post('/admin/skill-update', 'SkillController@updateSkill');
+
+    Route::post('/admin/skill-delete', 'SkillController@deleteSkill');
+
+    Route::get('/admin/designation-add', function(){
+        return view('admin.designation.add_designation');
+    });
+
+    Route::post('/admin/add-designation', 'DesignationController@addDesignation');
+
+    Route::get('/admin/designation', 'DesignationController@designation');
+
+    Route::post('/admin/designation-update', 'DesignationController@updateDesignation');
+
+    Route::post('/admin/designation-delete', 'DesignationController@deleteDesignation');
 
 });
 
@@ -63,6 +110,9 @@ Route::post('/login', 'LoginController@login');
 
 Route::get('/logout', 'LoginController@logout');
 
+Route::get('/jobseeker-profile', function(){
+    return view('jobseeker');
+});
 
 Route::get('/jobsearch', function () {
 
@@ -87,6 +137,19 @@ Route::get('/jobdetail/{job}', function (\App\Job $job) {
 
     return view('jobdetail', compact('job'));
 
+});
+
+Route::post('/getLocation', function(){
+    $city_id = \Illuminate\Support\Facades\Input::get('id');
+
+    $locations = \App\Location::where('city_id',$city_id)->get();
+    $output = "<option>Select Location</option>";
+    foreach ($locations as $location)
+    {
+        $output.='<option value="'.$location->id.'">'.$location->location.'</option>';
+
+    }
+    return $output;
 });
 
 

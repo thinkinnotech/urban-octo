@@ -114,7 +114,7 @@ background-color: #00aeef;
 .slider-area{
 	position: relative;
 	height: 400px;
-	background-color: #03A9F4;
+	background-color: #1b8af3;
 }
 #bg-slider .item img{
 	width: 100%;
@@ -547,7 +547,7 @@ background-color: #00aeef;
 }
 
 .footer-area{
-	background: #000;
+	background: #e7e7e7;
 	border-top: 4px solid #00AEEF;
 	padding-bottom: 20px
 
@@ -562,22 +562,22 @@ background-color: #00aeef;
 	margin-bottom: 20px;
 }
 .single-footer p{
-	color: #fff;
+	color: #000000;
 	line-height: 26px;
 }
 .single-footer h4{
-	color: #fff;
+	color: #000000;
 	font-weight: 700;
 	margin-top: 0px;
 	margin-bottom: 45px
 }
 .single-footer h5{
-	color: #fff;
+	color: #000000;
 	margin-top: 20px;
 	font-weight: 700;
 }
 .single-footer a{
-	color: #fff;
+	color: #000000;
 }
 .single-footer ul li{
 	margin-bottom: 10px
@@ -592,7 +592,7 @@ background-color: #00aeef;
 }
 
 .footer-copy{
-	color: #fff;
+	color: #000000;
 	font-weight: 700;
 }
 

@@ -40,6 +40,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/owl.transitions.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/easy-autocomplete.min.css') }}">
     <style>
 
         button.btn.searchBtn {
@@ -73,9 +74,39 @@
         .table tr.even {
             background: #f1f1f1;
         }
-        .panel-body { padding:0px; }
+
+        .no-padding
+        {
+            padding: 0px;
+        }
+        .panel-body {  }
         .panel-body table tr td { padding-left: 15px }
         .panel-body .table {margin-bottom: 0px; }
+        .white_back
+        {
+            background-color: #1b8af3!important;
+            color: white!important;
+        }
+        .list-group-item
+        {
+            border: none;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 0px;
+            padding-top:5px ;
+            padding-bottom:0px ;
+        }
+        .list-group
+        {
+            padding: 10px;
+        }
+        .panel_body_filter
+        {
+            overflow-y: auto;height: 240px
+        }
+        .easy-autocomplete-container
+        {
+            z-index: 9999;
+        }
     </style>
     @yield('style')
     <script src="{{ URL::asset('js/vendor/modernizr-2.6.2.min.js') }}"></script>
@@ -92,6 +123,7 @@
 <!-- Modal -->
 
 @include('sigin_signup_box')
+@include('location_modal')
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="{{ URL::asset('js/vendor/jquery-1.10.2.min.js') }}"><\/script>')</script>
@@ -99,6 +131,7 @@
 <script src="{{ URL::asset('js/owl.carousel.min.js') }}"></script>
 <script src="{{ URL::asset('js/wow.js') }}"></script>
 <script src="{{ URL::asset('js/main.js') }}"></script>
+<script src="{{ URL::asset('js/jquery.easy-autocomplete.min.js') }}"></script>
 <script>
     function submitSearch(form) {
 
@@ -121,6 +154,33 @@
             .replace(/^-+/, "")
             .replace(/-+$/, "");
     }
+    var options = {
+
+
+        url: function(phrase) {
+            if (phrase !== "") {
+                return "/getJobs?q=" + phrase + "&format=json";
+            } else {
+                //duckduckgo doesn't support empty strings
+                return "/getJobs?q=empty&format=json";
+            }
+        },
+
+        getValue: "name",
+
+        list: {
+            match: {
+                enabled: true
+            }
+        },
+
+
+
+    };
+
+    $("#query").easyAutocomplete(options);
+
 </script>
+@yield('script')
 </body>
 </html>

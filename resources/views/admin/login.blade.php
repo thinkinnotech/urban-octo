@@ -36,7 +36,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="{{ URL::to('/') }}"><b>Citi</b>Jobs</a>
+        <a href="{{ URL::to('/') }}"><img src="{{ URL::asset('img/cropped-logo2-1.png') }}" width="200px"/> </a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
