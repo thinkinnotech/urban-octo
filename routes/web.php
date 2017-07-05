@@ -114,6 +114,8 @@ Route::get('/jobseeker-profile', function(){
     return view('jobseeker');
 });
 
+Route::post('/add-jobseeker-profile', 'JobseekerController@create');
+
 Route::get('/jobsearch', function () {
 
     return view('jobsearch');

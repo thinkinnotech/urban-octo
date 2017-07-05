@@ -130,7 +130,7 @@
                             <div id="div_id_username" class="form-group required">
                                 <label for="job_title" class="control-label col-md-2  requiredField"> Date of Birth </label>
                                 <div class="controls col-md-4 ">
-                                    <input class="input-md  textinput textInput form-control" id="password" maxlength="30" required name="dob" placeholder="Date of Birth" style="margin-bottom: 10px" type="date" />
+                                    <input class="input-md  textinput textInput form-control" id="dob" maxlength="30" required name="dob" placeholder="Date of Birth" style="margin-bottom: 10px" type="date" />
                                 </div>
                             </div>
                             <div id="div_id_username" class="form-group required">
@@ -150,20 +150,20 @@
                                 <label for="job_position" class="control-label col-md-2  requiredField">Mobile Number   </label>
                                 <div class="controls col-md-4 ">
                                     <input class="input-md textinput textInput form-control" required id="job_position"
-                                           name="posted_phone" placeholder="Contact No" style="margin-bottom: 10px" type="text" />
+                                           name="phone" placeholder="Contact No" style="margin-bottom: 10px" type="text" />
                                 </div>
                             </div>
                             <div id="div_id_password1" class="form-group required">
                                 <label for="job_position" class="control-label col-md-2  requiredField">Contact Email  </label>
                                 <div class="controls col-md-4 ">
-                                    <input class="input-md textinput textInput form-control" required id="job_position" name="posted_email" placeholder="Email Id" style="margin-bottom: 10px" type="email" />
+                                    <input class="input-md textinput textInput form-control" required id="email" name="email" placeholder="Email Id" style="margin-bottom: 10px" type="email" />
                                 </div>
                             </div>
                             <div id="div_id_username" class="form-group required">
                                 <label for="job_title" class="control-label col-md-2  requiredField"> Job Type </label>
                                 <div class="controls col-md-4 ">
-                                    <select class="form-control" name="type" id="job_type" required style="margin-bottom: 10px;">
-                                        <option>Select Job Type</option>
+                                    <select class="form-control" name="job_type" required id="job_type" style="margin-bottom: 10px;">
+                                        <option value="">Select Job Type</option>
                                         <option value="wfh">Work From Home</option>
                                         <option value="part_time">Part Time</option>
                                         <option value="full_time">Full Time</option>
@@ -238,7 +238,7 @@
                             <div id="div_id_password1" class="form-group required">
                                 <label for="job_position" class="control-label col-md-2  requiredField">Experience </label>
                                 <div class="controls col-md-4 ">
-                                    <select class="form-control" required name="expr_min" id="" style="margin-bottom: 10px;" >
+                                    <select class="form-control" required name="experience" id="" style="margin-bottom: 10px;" >
                                         <option value="">Experience</option>
                                         <option value="0">Fresher</option>
                                         <option value="0.5">6 months </option>
@@ -285,7 +285,7 @@
                             </div>
                             <div id="div_id_password1" class="form-group required">
                                 <label for="job_position" class="control-label col-md-2  requiredField">Gender   </label>
-                                <div class="controls col-md-10 ">
+                                <div class="controls col-md-10 " style="margin-bottom: 10px;">
                                     <label class="radio-inline">
                                         <input type="radio" name="gender" value="Male" required>Male
                                     </label>
@@ -308,7 +308,7 @@
                             <div id="div_id_password2" class="form-group required">
                                 <label for="id_password2" class="control-label col-md-2 requiredField"> Upload Resume </label>
                                 <div class="controls col-md-10 ">
-                                    <input type="file" name="resume" required>
+                                    <input type="file" name="resume" required style="margin-bottom: 10px;">
                                 </div>
                             </div>
 
